@@ -1,21 +1,76 @@
-<!--<a href="#/Home" class="add-new-button">Home</a>
-<a href="#/addPerson" class="add-new-button">Add New Person</a>
-<a href="#/CreateList" class="add-new-button">Create New List</a>
-<a href="#/EditExistingList" class="add-new-button">Edit Existing List</a>-->
-<br/>
-<h2>Creat New</h2>
-<hr>
-<table class="NewList-app-table">
-    <tr>
-        <td>Create New List here</td>
-    </tr>
-    <tr>
-    <td><input type="text" data-ng-model="newListName"></td>
-    </tr>
-   <tr>
-        <td><input type="button" value="Create Gratis List" data-ng-click="createList(newListName)"></td>
-    </tr>
-    <tr>
-        <td><input type="text" data-ng-model="person.lastName"></td>
-    </tr>
-</table>
+<div class="wrapper">
+    <div id="firstCol">
+        <input type="radio" name="gender" value="editExisting" class="one"/>edit existing gratis list
+        <input type="radio" name="gender" value="newGratis" class="two"/>New gratis list
+    </div>
+    <div id="secondCol">
+        <select id="firstOpt" ng-model="selectedListName">
+            <option ng-repeat="list in listNames| orderBy:'Title'" value="{{list.Title}}">
+                {{list.Title}}
+            </option>
+        </select>
+        <div id="one">
+            <input type="text" value="type list name here" />
+            <input type="button" value="Create" />
+        </div>
+        <div id="second">
+            <span>Select Gratis List</span>
+            <select>
+                <option>
+                    Two
+                </option>
+                <option>
+                    Two
+                </option>
+                <option>
+                    Two
+                </option>
+            </select>
+        </div>
+    </div>
+    <div id="thirdCol">
+        <h2>People Search</h2>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" ng-model="firstName"/></td>
+                <td>Last Name</td>
+                <td><input type="text" ng-model="lastName"/></td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td><input type="text" ng-model="position"/></td>
+                <td>Company</td>
+                <td><input type="text" ng-model="company"/></td>
+            </tr>
+            
+            <tr>
+                <td colspan="3">
+                    <input type="button" value="Search" ng-click="searchList()"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="fourth">
+        <div class="contact">
+            <ul ng-if="peopleList">
+                <li><input type="checkbox"/><span>Check All</span></li>
+                <li ng-repeat="people in peopleList">
+                    <input type="checkbox" id="{{people.Id}}"/>
+                    <span>{{people.Name}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="contact">
+            <ul>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="fifth">
+    <input type="radio" name="gender" value="editExisting" class="one"/>add Individual contact
+    <input type="radio" name="gender" value="newGratis" class="two"/>add existing Gratis Contact
+</div>

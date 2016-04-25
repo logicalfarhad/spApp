@@ -7,6 +7,14 @@
 	        var query = listEndPoint + "/GetByTitle('People')/Items?$select=ID,FirstName,LastName,Address";
 	        return baseService.getRequest(query);
 	    };
+	    var getListNames = function () {
+	        return baseService.getRequest(listEndPoint + "?$select=Title");
+	    };
+
+	    var search = function (searchObj) {
+	        var searchUrl = listEndPoint + "/GetByTitle('" + searchObj.listName + "')/items?$select=ID,FirstName,LastName &$filter=(substringof('" + searchObj.firstName + "', FirstName)) or (substringof('" + searchObj.lastName + "', LastName))  or (substringof('" + searchObj.position + "', Position))  or (substringof('" + searchObj.company + "', Company))";
+	        return baseService.getRequest(searchUrl);
+	    }
 	    var addNew = function (person) {
 	        var data = {
 	            __metadata: { 'type': 'SP.Data.PeopleListItem' },
@@ -58,7 +66,9 @@
 	        getById: getById,
 	        update: update,
 	        remove: remove,
-	        addNewList: addNewList
+	        addNewList: addNewList,
+	        getListNames: getListNames,
+	        search: search
 	    };
 	}]);
 })();

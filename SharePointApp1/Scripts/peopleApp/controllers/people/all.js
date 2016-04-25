@@ -8,7 +8,6 @@
         function load() {
             var promiseGet = peopleService.getAll();
             promiseGet.then(function (data) {
-                console.log(data.d.results);
                 $scope.people = data.d.results;
             });
         }
