@@ -67,6 +67,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\peopleApp\app.js" />
     <Content Include="Scripts\peopleApp\controllers\GratisList\CreateList.js" />
+    <Content Include="Scripts\peopleApp\controllers\GratisList\editListCtrl.js" />
     <Content Include="Scripts\peopleApp\controllers\people\add.js" />
     <Content Include="Scripts\peopleApp\controllers\people\all.js" />
     <Content Include="Scripts\peopleApp\controllers\people\edit.js" />

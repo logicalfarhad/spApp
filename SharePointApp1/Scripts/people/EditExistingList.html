@@ -1,21 +1,26 @@
-<h2>Editing Existing</h2>
-<hr>
-<table class="people-app-table">
+<table>
     <tr>
-        <td>Editing Existing  List here</td>
+        <td>List Name</td>
+        <td>
+            <select ng-model="selectedItem" ng-change="update()">
+                <option ng-repeat="item in listNames" ng-selected="selectedItem == item.Title" value="{{item.Title}}">{{item.Title}}</option>
+            </select>
+        </td>
+        <td colspan="3">
+            <input type="button" value="Add People" ng-click="works()"/>
+        </td>
     </tr>
-		<!--<td><input type="text" data-ng-model="person.firstName"></td>
-	</tr>
-	<tr>
-		<td>Last Name</td>
-		<td><input type="text" data-ng-model="person.lastName"></td>
-	</tr>
-	<tr>
-		<td>Address</td>
-		<td><textarea data-ng-model="person.address"></textarea></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td><input type="button" value="Save" data-ng-click="addPerson(person)"></td>
-	</tr>-->
+    <tr>
+        <td>List Owner</td>
+        <td><span ng-model="owner"></span></td>
+        <td></td>
+    </tr>
+
+</table>
+
+<table>
+    <tr ng-repeat="(key, value) in data">
+        <td> {{key}} </td>
+        <td> {{ value }} </td>
+    </tr>
 </table>

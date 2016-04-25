@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Scripts">
     <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
@@ -8,12 +9,18 @@
     <File Path="Scripts\jquery-1.9.1.intellisense.js" Url="Scripts/jquery-1.9.1.intellisense.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-route.min.js" Url="Scripts/angular-route.min.js" ReplaceContent="TRUE" />
     <File Path="Scripts\angular.min.js" Url="Scripts/angular.min.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\peopleApp\controllers\GratisList\CreateList.js" Url="Scripts/peopleApp/controllers/GratisList/CreateList.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\peopleApp\controllers\people\add.js" Url="Scripts/peopleApp/controllers/people/add.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\peopleApp\controllers\people\all.js" Url="Scripts/peopleApp/controllers/people/all.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\peopleApp\controllers\people\edit.js" Url="Scripts/peopleApp/controllers/people/edit.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\peopleApp\services\baseSvc.js" Url="Scripts/peopleApp/services/baseSvc.js" ReplaceContent="TRUE" />
-    <File Path="Scripts\peopleApp\services\people\people.js" Url="Scripts/peopleApp/services/people/people.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\controllers\GratisList\CreateList.js"
+          Url="Scripts/peopleApp/controllers/GratisList/CreateList.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\controllers\people\add.js" Url="Scripts/peopleApp/controllers/people/add.js"
+          ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\controllers\people\all.js" Url="Scripts/peopleApp/controllers/people/all.js"
+          ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\controllers\people\edit.js" Url="Scripts/peopleApp/controllers/people/edit.js"
+          ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\services\baseSvc.js" Url="Scripts/peopleApp/services/baseSvc.js"
+          ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\services\people\people.js" Url="Scripts/peopleApp/services/people/people.js"
+          ReplaceContent="TRUE" />
     <File Path="Scripts\peopleApp\app.js" Url="Scripts/peopleApp/app.js" ReplaceContent="TRUE" />
     <File Path="Scripts\peopleApp\route.js" Url="Scripts/peopleApp/route.js" ReplaceContent="TRUE" />
     <File Path="Scripts\people\add.html" Url="Scripts/people/add.html" ReplaceContent="TRUE" />
@@ -24,5 +31,7 @@
     <File Path="Scripts\people\Home.html" Url="Scripts/people/Home.html" ReplaceContent="TRUE" />
     <File Path="Scripts\people\menu.html" Url="Scripts/people/menu.html" ReplaceContent="TRUE" />
     <File Path="Scripts\angular-sanitize.js" Url="Scripts/angular-sanitize.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\peopleApp\controllers\GratisList\editListCtrl.js"
+          Url="Scripts/peopleApp/controllers/GratisList/editListCtrl.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

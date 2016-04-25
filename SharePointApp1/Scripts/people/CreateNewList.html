@@ -10,8 +10,8 @@
             </option>
         </select>
         <div id="one">
-            <input type="text" value="type list name here" />
-            <input type="button" value="Create" />
+            <input type="text" value="type list name here"/>
+            <input type="button" value="Create"/>
         </div>
         <div id="second">
             <span>Select Gratis List</span>
@@ -33,17 +33,25 @@
         <table>
             <tr>
                 <td>First Name</td>
-                <td><input type="text" ng-model="firstName"/></td>
+                <td>
+                    <input type="text" ng-model="firstName"/>
+                </td>
                 <td>Last Name</td>
-                <td><input type="text" ng-model="lastName"/></td>
+                <td>
+                    <input type="text" ng-model="lastName"/>
+                </td>
             </tr>
             <tr>
                 <td>Position</td>
-                <td><input type="text" ng-model="position"/></td>
+                <td>
+                    <input type="text" ng-model="position"/>
+                </td>
                 <td>Company</td>
-                <td><input type="text" ng-model="company"/></td>
+                <td>
+                    <input type="text" ng-model="company"/>
+                </td>
             </tr>
-            
+
             <tr>
                 <td colspan="3">
                     <input type="button" value="Search" ng-click="searchList()"/>
@@ -54,7 +62,8 @@
     <div id="fourth">
         <div class="contact">
             <ul ng-if="peopleList">
-                <li><input type="checkbox"/><span>Check All</span></li>
+                <li>
+                    <input type="checkbox"/><span>Check All</span></li>
                 <li ng-repeat="people in peopleList">
                     <input type="checkbox" id="{{people.Id}}"/>
                     <span>{{people.Name}}</span>

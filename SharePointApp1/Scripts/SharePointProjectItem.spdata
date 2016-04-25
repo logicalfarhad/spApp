@@ -25,5 +25,6 @@
     <ProjectItemFile Source="people\Home.html" Target="Scripts\people\" Type="ElementFile" />
     <ProjectItemFile Source="people\menu.html" Target="Scripts\people\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="peopleApp\controllers\GratisList\editListCtrl.js" Target="Scripts\peopleApp\controllers\GratisList\" Type="ElementFile" />
   </Files>
 </ProjectItem>
