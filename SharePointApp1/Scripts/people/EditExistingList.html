@@ -3,7 +3,9 @@
         <td>List Name</td>
         <td>
             <select ng-model="selectedItem" ng-change="update()">
-                <option ng-repeat="item in listNames" ng-selected="selectedItem == item.Title" value="{{item.Title}}">{{item.Title}}</option>
+                <option ng-repeat="item in listNames" value="{{item.Title}}">
+                    {{item.Title}}
+                </option>
             </select>
         </td>
         <td colspan="3">
@@ -36,3 +38,72 @@
         </tr>
     </tbody>
 </table>
+
+<table id="searchTable" ng-if="screenTwo">
+    <tr>
+        <td>Name</td>
+        <td><input type="text" ng-model="name" /></td>
+    </tr>
+    <tr>
+        <td>LastName</td>
+        <td><input type="text" ng-model="lastName" /></td>
+    </tr>
+    <tr>
+        <td>Position</td>
+        <td><input type="text" ng-model="position" /></td>
+    </tr>
+    <tr>
+        <td>Company</td>
+        <td><input type="text" ng-model="company" /></td>
+    </tr>
+    <tr>
+        <td>ListName</td>
+        <td>
+            <select ng-model="searchListName" ng-change="updateSearchList()">
+                <option value=""></option>
+                <option ng-repeat="item in listNames" ng-if="item.Title!=selectedItem" value="{{item.Title}}">
+                    {{item.Title}}
+                </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>List Owner</td>
+        <td><input type="text" ng-model="listOwner" /></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Search" ng-click="searchList(name,lastName,position,searchListName,listOwner,company)" /></td>
+        <td><input type="button" value="Cancel" /></td>
+    </tr>
+</table>
+
+<div id="selectItems" ng-if="result.length">
+    <h2>Search Results</h2>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="button" ng-model="selectedAll" value="CheckAll/Un-CheckAll" ng-click="checkAll()"/></th>
+                <th><input type="button" value="Add marked to selected List" /></th>
+                <th><input type="button" value="New Search" /></th>
+            </tr>
+        </thead>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Last Name</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="i in result">
+                <td>
+                    <input type="checkbox" ng-checked="selectedAll" ng-model="item.Selected" value="{{i.Id}}" />
+                </td>
+                <td>{{i.LastName}}</td>
+                <td>{{i.Company}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

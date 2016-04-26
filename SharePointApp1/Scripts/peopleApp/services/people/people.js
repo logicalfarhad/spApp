@@ -15,6 +15,10 @@
                     var query = listEndPoint + "/GetByTitle('" + listName + "')/Items?$select=FullName/Title,FullName/LastName,FullName/FirstName,FullName/Company&$expand=FullName";
                     return baseService.getRequest(query);
                 }
+                var searchListItemsbyListName = function (searchObj) {
+                    var query = listEndPoint + "/GetByTitle('" + searchObj.listName + "')/Items?$select=FullName/Title,FullName/LastName,FullName/FirstName,FullName/Company&$expand=FullName&$filter=(substringof('" + searchObj.firstName + "', FullName/FirstName)) or (substringof('" + searchObj.lastName + "', FullName/LastName)) or (substringof('" + searchObj.company + "', FullName/Company))";
+                    return baseService.getRequest(query);
+                }
                 function schemaXml2Json(schemaXml) {
                     var jsonObject = {
 
@@ -31,8 +35,7 @@
                     var endpointUrl = listEndPoint + "/getbytitle('" + listName + "')?$select=schemaXml";
                     return baseService.getRequest(endpointUrl).then(function (data) {
                         var listProperties = schemaXml2Json(data.d.SchemaXml);
-                        console.log(listProperties.Author);
-                        var listCreatorEndPoint = "/_api/web/siteUsers/getById(" + parseInt(listProperties.Author, 10) + ")";
+                        var listCreatorEndPoint = "/_api/web/siteUsers/getById(" + parseInt(listProperties.Author, 10) + ")?$select=Title";
                         return baseService.getRequest(listCreatorEndPoint);
                     }, function () {
 
@@ -40,8 +43,16 @@
                 }
 
                 var search = function (searchObj) {
-                    var searchUrl = listEndPoint + "/GetByTitle('" + searchObj.listName + "')/items?$select=ID,FirstName,LastName &$filter=(substringof('" + searchObj.firstName + "', FirstName)) or (substringof('" + searchObj.lastName + "', LastName))  or (substringof('" + searchObj.position + "', Position))  or (substringof('" + searchObj.company + "', Company))";
-                    return baseService.getRequest(searchUrl);
+                    var searchUrl = '';
+                    if (searchObj.listName) {
+                        //  searchUrl = listEndPoint + "/GetByTitle('" + searchObj.listName + "')/items?$select=ID,FirstName,LastName &$filter=(substringof('" + searchObj.firstName + "', FirstName)) or (substringof('" + searchObj.lastName + "', LastName))  or (substringof('" + searchObj.position + "', Position))  or (substringof('" + searchObj.company + "', Company))";
+                        return searchListItemsbyListName(searchObj);
+                    } else {
+                        searchUrl = listEndPoint + "/GetByTitle('People')/items?$select=ID,FirstName,LastName,Company,Position &$filter=(substringof('" + searchObj.firstName + "', FirstName)) or (substringof('" + searchObj.lastName + "', LastName))  or (substringof('" + searchObj.position + "', Position))  or (substringof('" + searchObj.company + "', Company))";
+                        return baseService.getRequest(searchUrl);
+                    }
+
+
                 };
                 var addNew = function (person) {
                     var data = {

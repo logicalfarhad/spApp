@@ -5,21 +5,23 @@
     width: 100%;
 }
 
-.all-people table th {
-    border-right: 3px solid #98bf21;
-    font-size: 1.4em;
-    padding: 5px;
-    text-align: left;
-}
+    .all-people table th {
+        border-right: 3px solid #98bf21;
+        font-size: 1.4em;
+        padding: 5px;
+        text-align: left;
+    }
 
-.all-people table td {
-    border: 3px solid #98bf21;
-    font-size: 1.2em;
-    padding: 5px;
-    text-align: center;
-}
+    .all-people table td {
+        border: 3px solid #98bf21;
+        font-size: 1.2em;
+        padding: 5px;
+        text-align: center;
+    }
 
-.all-people { margin-top: 17px; }
+.all-people {
+    margin-top: 17px;
+}
 
 .add-new-button {
     background-color: rgb(55, 139, 202);
@@ -27,21 +29,37 @@
     padding: 8px;
 }
 
-.add-new-button:visited { color: white; }
+    .add-new-button:visited {
+        color: white;
+    }
 
-.people-app { width: 800px; }
+.people-app {
+    width: 800px;
+}
 
-.people-app-table { width: 100%; }
+.people-app-table {
+    width: 100%;
+}
 
-.people-app-table input[type=text], textarea { width: 50% !important; }
+    .people-app-table input[type=text], textarea {
+        width: 50% !important;
+    }
 
-.people-app-table input[type=button] { margin: 0 !important; }
+    .people-app-table input[type=button] {
+        margin: 0 !important;
+    }
 
-.NewList-app-table { width: 100%; }
+.NewList-app-table {
+    width: 100%;
+}
 
-.NewList-app-table input[type=text], textarea { width: 50% !important; }
+    .NewList-app-table input[type=text], textarea {
+        width: 50% !important;
+    }
 
-.NewList-app-table input[type=button] { margin: 0 !important; }
+    .NewList-app-table input[type=button] {
+        margin: 0 !important;
+    }
 
 div#firstCol {
     float: left;
@@ -91,6 +109,19 @@ div#fourth, div#fifth {
     width: 450px;
 }
 
-.contact ul { list-style-type: none; }
+    .contact ul {
+        list-style-type: none;
+    }
 
-.contact ul li span { vertical-align: top; }
+        .contact ul li span {
+            vertical-align: top;
+        }
+
+#searchTable {
+    float: left;
+}
+
+div#selectItems {
+    float: left;
+    margin-left: 20%;
+}
