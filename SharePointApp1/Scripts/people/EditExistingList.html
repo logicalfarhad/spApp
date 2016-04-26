@@ -7,20 +7,32 @@
             </select>
         </td>
         <td colspan="3">
-            <input type="button" value="Add People" ng-click="works()"/>
+            <input type="button" value="Add People" ng-click="works()" />
         </td>
     </tr>
-    <tr>
+    <tr ng-if="owner">
         <td>List Owner</td>
-        <td><span ng-model="owner"></span></td>
+        <td><span ng-model="owner">{{owner}}</span></td>
         <td></td>
     </tr>
 
 </table>
 
-<table>
-    <tr ng-repeat="(key, value) in data">
-        <td> {{key}} </td>
-        <td> {{ value }} </td>
-    </tr>
+<table ng-if="data">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Company</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in data">
+            <td>{{item.FullName.Title}}</td>
+            <td>{{item.FullName.FirstName}}</td>
+            <td>{{item.FullName.LastName}}</td>
+            <td>{{item.FullName.Company}}</td>
+        </tr>
+    </tbody>
 </table>

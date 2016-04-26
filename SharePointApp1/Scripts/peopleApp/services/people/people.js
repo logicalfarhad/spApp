@@ -12,9 +12,33 @@
                     return baseService.getRequest(listEndPoint + "?$select=Title&$orderby=Title asc &$filter=Description eq 'Gratis List'");
                 };
                 var getListItemsbyListName = function (listName) {
-                    var query = listEndPoint + "/GetByTitle('" + listName + "')/Items";
+                    var query = listEndPoint + "/GetByTitle('" + listName + "')/Items?$select=FullName/Title,FullName/LastName,FullName/FirstName,FullName/Company&$expand=FullName";
                     return baseService.getRequest(query);
                 }
+                function schemaXml2Json(schemaXml) {
+                    var jsonObject = {
+
+                    };
+                    var schemaXmlDoc = $.parseXML(schemaXml);
+                    $(schemaXmlDoc).find('List').each(function () {
+                        $.each(this.attributes, function (i, attr) {
+                            jsonObject[attr.name] = attr.value;
+                        });
+                    });
+                    return jsonObject;
+                }
+                var getListOwnerbyListName = function (listName) {
+                    var endpointUrl = listEndPoint + "/getbytitle('" + listName + "')?$select=schemaXml";
+                    return baseService.getRequest(endpointUrl).then(function (data) {
+                        var listProperties = schemaXml2Json(data.d.SchemaXml);
+                        console.log(listProperties.Author);
+                        var listCreatorEndPoint = "/_api/web/siteUsers/getById(" + parseInt(listProperties.Author, 10) + ")";
+                        return baseService.getRequest(listCreatorEndPoint);
+                    }, function () {
+
+                    });
+                }
+
                 var search = function (searchObj) {
                     var searchUrl = listEndPoint + "/GetByTitle('" + searchObj.listName + "')/items?$select=ID,FirstName,LastName &$filter=(substringof('" + searchObj.firstName + "', FirstName)) or (substringof('" + searchObj.lastName + "', LastName))  or (substringof('" + searchObj.position + "', Position))  or (substringof('" + searchObj.company + "', Company))";
                     return baseService.getRequest(searchUrl);
@@ -73,7 +97,8 @@
                     addNewList: addNewList,
                     getListNames: getListNames,
                     search: search,
-                    getListItemsbyListName: getListItemsbyListName
+                    getListItemsbyListName: getListItemsbyListName,
+                    getListOwnerbyListName: getListOwnerbyListName
                 };
             }
         ]);

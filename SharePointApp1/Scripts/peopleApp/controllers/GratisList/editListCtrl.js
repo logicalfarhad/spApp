@@ -3,17 +3,20 @@
 
     function editListCtrl($scope, peopleService) {
         peopleService.getListNames().then(function (data) {
-            console.log(data);
             $scope.listNames = data.d.results;
-            //console.log($scope.selectedItem);
         }, function () {
 
         });
         $scope.update = function () {
-            console.log($scope.selectedItem);
             var listName = $scope.selectedItem;
             peopleService.getListItemsbyListName(listName).then(function (items) {
                 $scope.data = items.d.results;
+                peopleService.getListOwnerbyListName(listName).then(function (data) {
+                    $scope.owner = data.d.Title;
+                }, function () {
+
+                });
+
             }, function () {
 
             });
