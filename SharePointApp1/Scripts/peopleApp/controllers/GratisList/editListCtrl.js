@@ -50,13 +50,28 @@
                 });
                 $scope.result = result;
             });
-            $scope.selectedAll = false;
+
             $scope.checkAll = function () {
-                if ($scope.selectedAll) {
-                    $scope.selectedAll = false;
-                } else {
-                    $scope.selectedAll = true;
-                }
+
+                angular.forEach($scope.result, function (item) {
+                    item.checked = !item.checked;
+                });
+
+            }
+            $scope.checkClick = function (item) {
+                console.log(item);
+            }
+            $scope.find = function () {
+                console.log($scope.selectedItem);
+                angular.forEach($scope.result, function (item) {
+                    if (item.checked) {
+                        peopleService.toGenericList({
+                            listName: $scope.selectedItem, Id: item.Id
+                        }).then(function (data) {
+                            console.log(data);
+                        });
+                    }
+                });
             }
 
         }

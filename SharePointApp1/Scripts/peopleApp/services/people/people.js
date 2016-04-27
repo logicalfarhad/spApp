@@ -54,6 +54,20 @@
 
 
                 };
+                var getItemTypeForListName = function (name) {
+                    return "SP.Data." + name.charAt(0).toUpperCase() + name.split(" ").join("").slice(1) + "ListItem";
+                }
+                var toGenericList = function (metaData) {
+                    var itemType = getItemTypeForListName(metaData.listName);
+                    var data = {
+                        __metadata: { 'type': itemType },
+                        FullNameId: metaData.Id
+                    };
+                    debugger;
+                    var url = listEndPoint + "/GetByTitle('" + metaData.listName + "')/Items";
+                    return baseService.postRequest(data, url);
+                }
+
                 var addNew = function (person) {
                     var data = {
                         __metadata: { 'type': "SP.Data.PeopleListItem" },
@@ -109,7 +123,8 @@
                     getListNames: getListNames,
                     search: search,
                     getListItemsbyListName: getListItemsbyListName,
-                    getListOwnerbyListName: getListOwnerbyListName
+                    getListOwnerbyListName: getListOwnerbyListName,
+                    toGenericList: toGenericList
                 };
             }
         ]);

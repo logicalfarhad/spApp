@@ -82,8 +82,8 @@
     <table>
         <thead>
             <tr>
-                <th><input type="button" ng-model="selectedAll" value="CheckAll/Un-CheckAll" ng-click="checkAll()"/></th>
-                <th><input type="button" value="Add marked to selected List" /></th>
+                <th><input type="button" value="CheckAll/Un-CheckAll" ng-click="checkAll()"/></th>
+                <th><input type="button" value="Add marked to selected List" ng-click="find()"/></th>
                 <th><input type="button" value="New Search" /></th>
             </tr>
         </thead>
@@ -93,15 +93,17 @@
             <tr>
                 <th>Select</th>
                 <th>Last Name</th>
+                <th>First Name</th>
                 <th>Company</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="i in result">
                 <td>
-                    <input type="checkbox" ng-checked="selectedAll" ng-model="item.Selected" value="{{i.Id}}" />
+                    <input type="checkbox" ng-checked="i.checked" ng-model="i.checked" value="{{i.Id}}" ng-click="checkClick(i)"/>
                 </td>
                 <td>{{i.LastName}}</td>
+                <td>{{i.FirstName}}</td>
                 <td>{{i.Company}}</td>
             </tr>
         </tbody>
