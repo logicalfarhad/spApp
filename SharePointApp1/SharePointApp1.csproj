@@ -47,8 +47,15 @@
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{08d351e8-e562-40bb-8e43-f7876b6073db}</SharePointProjectItemId>
     </None>
+    <Content Include="Images\admin.jpg" />
+    <Content Include="Images\budget.jpg" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\edit.png" />
+    <Content Include="Images\expenses.jpg" />
+    <Content Include="Images\gratis.jpg" />
+    <Content Include="Images\itineraries.jpg" />
+    <Content Include="Images\media.jpg" />
+    <Content Include="Images\people.jpg" />
     <Content Include="Pages\Elements.xml" />
     <Content Include="Pages\Default.aspx" />
   </ItemGroup>
@@ -76,10 +83,10 @@
     <Content Include="Scripts\peopleApp\services\people\people.js" />
     <Content Include="Scripts\people\add.html" />
     <Content Include="Scripts\people\all.html" />
-    <Content Include="Scripts\people\CreateNewList.html" />
+    <Content Include="Scripts\people\createNewList.html" />
     <Content Include="Scripts\people\edit.html" />
-    <Content Include="Scripts\people\EditExistingList.html" />
-    <Content Include="Scripts\people\Home.html" />
+    <Content Include="Scripts\people\editExistingList.html" />
+    <Content Include="Scripts\people\home.html" />
     <Content Include="Scripts\people\menu.html" />
     <Content Include="Scripts\_references.js" />
   </ItemGroup>

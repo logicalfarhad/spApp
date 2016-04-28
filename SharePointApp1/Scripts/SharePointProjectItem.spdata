@@ -19,10 +19,10 @@
     <ProjectItemFile Source="peopleApp\route.js" Target="Scripts\peopleApp\" Type="ElementFile" />
     <ProjectItemFile Source="people\add.html" Target="Scripts\people\" Type="ElementFile" />
     <ProjectItemFile Source="people\all.html" Target="Scripts\people\" Type="ElementFile" />
-    <ProjectItemFile Source="people\CreateNewList.html" Target="Scripts\people\" Type="ElementFile" />
+    <ProjectItemFile Source="people\createNewList.html" Target="Scripts\people\" Type="ElementFile" />
     <ProjectItemFile Source="people\edit.html" Target="Scripts\people\" Type="ElementFile" />
-    <ProjectItemFile Source="people\EditExistingList.html" Target="Scripts\people\" Type="ElementFile" />
-    <ProjectItemFile Source="people\Home.html" Target="Scripts\people\" Type="ElementFile" />
+    <ProjectItemFile Source="people\editExistingList.html" Target="Scripts\people\" Type="ElementFile" />
+    <ProjectItemFile Source="people\home.html" Target="Scripts\people\" Type="ElementFile" />
     <ProjectItemFile Source="people\menu.html" Target="Scripts\people\" Type="ElementFile" />
     <ProjectItemFile Source="angular-sanitize.js" Target="Scripts\" Type="ElementFile" />
     <ProjectItemFile Source="peopleApp\controllers\GratisList\editListCtrl.js" Target="Scripts\peopleApp\controllers\GratisList\" Type="ElementFile" />

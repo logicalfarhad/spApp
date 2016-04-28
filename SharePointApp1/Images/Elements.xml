@@ -5,5 +5,12 @@
     <File Path="Images\AppIcon.png" Url="Images/AppIcon.png" ReplaceContent="TRUE" />
     <File Path="Images\delete.png" Url="Images/delete.png" ReplaceContent="TRUE" />
     <File Path="Images\edit.png" Url="Images/edit.png" ReplaceContent="TRUE" />
+    <File Path="Images\media.jpg" Url="Images/media.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\people.jpg" Url="Images/people.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\admin.jpg" Url="Images/admin.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\budget.jpg" Url="Images/budget.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\expenses.jpg" Url="Images/expenses.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\gratis.jpg" Url="Images/gratis.jpg" ReplaceContent="TRUE" />
+    <File Path="Images\itineraries.jpg" Url="Images/itineraries.jpg" ReplaceContent="TRUE" />
   </Module>
 </Elements>

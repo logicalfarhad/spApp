@@ -125,3 +125,6 @@ div#selectItems {
     float: left;
     margin-left: 20%;
 }
+div#landing {
+    width: 900px;
+}

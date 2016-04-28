@@ -1,4 +1,4 @@
-(function() {
+(function () {
     angular.module("peopleApp", ["ui.router", "ngSanitize"]).config(config);
 
     function config($stateProvider, $urlRouterProvider) {
@@ -6,26 +6,30 @@
         $stateProvider.state("home",
         {
             url: "/home",
+            templateUrl: "../Scripts/people/home.html",
+            controller: "allPeopleCtrl"
+        }).state("people",
+        {
+            url: "/people",
             templateUrl: "../Scripts/people/menu.html",
             controller: "allPeopleCtrl"
-        }).state("home.all",
-        {
-            url: "/all",
+        }).state("people.all", {
+            url: "/allpeople",
             templateUrl: "../Scripts/people/all.html",
             controller: "allPeopleCtrl"
-        }).state("home.addPerson", {
+        }).state("people.addPerson", {
             url: "/add",
             templateUrl: "../Scripts/people/add.html",
             controller: "addPersonCtrl"
-        }).state("home.createList", {
+        }).state("people.createList", {
             url: "/createList",
-            templateUrl: "../Scripts/people/CreateNewList.html",
+            templateUrl: "../Scripts/people/createNewList.html",
             controller: "CreateListCtrl"
-        }).state("home.editExistingList", {
+        }).state("people.editExistingList", {
             url: "/editExistingList",
-            templateUrl: "../Scripts/people/EditExistingList.html",
+            templateUrl: "../Scripts/people/editExistingList.html",
             controller: "editListCtrl"
-        }).state("home.edit", {
+        }).state("people.edit", {
             url: "/editPerson/:personId",
             templateUrl: "../Scripts/people/edit.html",
             controller: "editPersonCtrl"

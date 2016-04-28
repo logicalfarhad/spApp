@@ -5,5 +5,12 @@
     <ProjectItemFile Source="AppIcon.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="delete.png" Target="Images\" Type="ElementFile" />
     <ProjectItemFile Source="edit.png" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="media.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="people.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="admin.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="budget.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="expenses.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="gratis.jpg" Target="Images\" Type="ElementFile" />
+    <ProjectItemFile Source="itineraries.jpg" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>

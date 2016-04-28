@@ -15,9 +15,10 @@
         }
 
         $scope.removePerson = function(item) {
-            peopleService.remove(item.Id);
-            var index = $scope.people.indexOf(item.Id);
-            $scope.people.splice(index, 1);
+            peopleService.remove(item.Id).then(function() {
+                var index = $scope.people.indexOf(item.Id);
+                $scope.people.splice(index, 1);
+            });
         };
     }
 

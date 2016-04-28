@@ -1,31 +1,25 @@
-<!--<a href="#/Home" class="add-new-button">Home</a>
-<a href="#/addPerson" class="add-new-button">Add New Person</a>
-<a href="#/CreateList" class="add-new-button">Create New List</a>
-<a href="#/EditExistingList" class="add-new-button">Edit Existing List</a>-->
-
-<br/>
 <div class="all-people">
     <table>
         <tbody>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Address</th>
-            <th>Action</th>
-        </tr>
-        <tr data-ng-repeat="person in people">
-            <td>{{person.FirstName}}</td>
-            <td>{{person.LastName}}</td>
-            <td ng-bind-html="person.Address"> </td>
-            <td>
-                <a ui-sref="home.edit({personId:person.ID})">
-                    <img src="../Images/edit.png" alt="">
-                </a>
-                <a href="" data-ng-click="removePerson(person)">
-                    <img src="../Images/delete.png" alt="">
-                </a>
-            </td>
-        </tr>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+            <tr data-ng-repeat="person in people">
+                <td>{{person.FirstName}}</td>
+                <td>{{person.LastName}}</td>
+                <td ng-bind-html="person.Address"> </td>
+                <td>
+                    <a ui-sref="people.edit({personId:person.ID})">
+                        <img src="../Images/edit.png" alt="">
+                    </a>
+                    <a href="" data-ng-click="removePerson(person)">
+                        <img src="../Images/delete.png" alt="">
+                    </a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
